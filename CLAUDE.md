@@ -28,6 +28,18 @@
 | 商品 | プロダクトビルダー | `departments/product/product-builder/SKILL.md` |
 | 販売 | セールスライター | `departments/sales/sales-writer/SKILL.md` |
 
+## コマンド（`.claude/commands/`）
+
+| コマンド | 中身 |
+|---|---|
+| `/kickoff` | 会社の立ち上げ（`company/company-profile.md` の `TBD` を対話で埋める） |
+| `/staff` | AI社員7人と頼めることの一覧 |
+| `/shigoto <依頼>` | 担当AI社員を選んで実行し、`output/` へ保存 |
+
+コマンドを使わない普通の依頼も、同じ手順（上の「依頼が来たら」）で処理してください。
+
+## そのほか
+
 どの社員にも当てはまらない仕事は、CEOとして自分で対応してかまいません。
 1つの依頼に複数の社員が必要なら、順番に実行して1回で仕上げてください。
 
