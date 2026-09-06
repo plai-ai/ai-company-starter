@@ -15,23 +15,31 @@
 
 ```
 ai-company-starter/
-├── CLAUDE.md                  ← 会社の動かし方（Claude Codeが最初に読む）
-├── .claude/commands/          ← コマンド（/kickoff・/staff・/shigoto）
-├── company/
-│   └── company-profile.md     ← あなたの事業内容（最初の会話でCEOが埋めます）
-├── departments/               ← 部署とAI社員
-│   ├── ceo/                   ← 社長AI（あなたの右腕）
-│   ├── marketing/
-│   │   ├── sns-marketer/      ← 集客担当（SNS投稿）
-│   │   ├── lp-designer/       ← LP担当（販売ページ・登録ページ）
-│   │   └── content-creator/   ← コンテンツ担当（記事・台本）
-│   ├── education/
-│   │   └── step-message-writer/ ← 教育担当（ステップ配信）
-│   ├── product/
-│   │   └── product-builder/   ← 商品担当（講座・資料の中身）
-│   └── sales/
-│       └── sales-writer/      ← 販売担当（案内文・セールス文）
-└── output/                    ← 成果物はぜんぶここに貯まる
+├── CLAUDE.md                    ← 会社の動かし方（Claude Codeが最初に読む）
+├── .claude/commands/            ← コマンド（/kickoff・/staff・/shigoto）
+├── knowledge/
+│   └── company-profile.md       ← 会社のナレッジ（事業内容・ターゲット。最初の会話でCEOが埋めます）
+└── departments/                 ← 部署とAI社員（1人＝1フォルダ）
+    ├── ceo/                     ← 社長AI（あなたの右腕）
+    ├── marketing/
+    │   ├── sns-marketer/        ← 集客担当（SNS投稿）
+    │   ├── lp-designer/         ← LP担当（販売ページ・登録ページ）
+    │   └── content-creator/     ← コンテンツ担当（記事・台本）
+    ├── education/
+    │   └── step-message-writer/ ← 教育担当（ステップ配信）
+    ├── product/
+    │   └── product-builder/     ← 商品担当（講座・資料の中身）
+    └── sales/
+        └── sales-writer/        ← 販売担当（案内文・セールス文）
+```
+
+**AI社員1人のフォルダは、いつも同じ3つでできています。**
+
+```
+sns-marketer/
+├── skills/      ← スキル（仕事の定義）  : 指示書 SKILL.md
+├── knowledge/   ← ナレッジ（判断基準）  : quality-bar.md（合格ライン）・feedback.md（直しの台帳）
+└── output/      ← アウトプット（正解例）: 作った成果物。合格したものが次の見本になる
 ```
 
 ビジネスの5つの部品 —— **集客 → LP・コンテンツ → 教育 → 商品 → 販売** —— それぞれに担当AI社員がいます。
@@ -87,7 +95,7 @@ git clone https://github.com/plai-ai/ai-company-starter.git
 1. Obsidian を起動 → 「**保管庫としてフォルダーを開く**（Open folder as vault）」
 2. さきほどの `ai-company-starter` フォルダを選ぶ
 
-これで会社の中身（組織図・指示書・成果物）が見やすくなります。やらなくても動きます。
+これで会社の中身（組織図・各社員の skills / knowledge / output）が見やすくなります。やらなくても動きます。
 
 ### Step 4. 会社を起動する
 
@@ -137,7 +145,7 @@ Claude Code が立ち上がったら、次のコマンドを打つだけです:
 
 コマンドを使わず、ふつうに「SNS投稿を10本作って」と話しかけても同じように動きます。
 
-成果物は `output/` フォルダに貯まっていきます。
+成果物は、担当したAI社員の `output/` フォルダ（例: `departments/marketing/sns-marketer/output/`）に貯まっていきます。
 
 ---
 
@@ -145,7 +153,7 @@ Claude Code が立ち上がったら、次のコマンドを打つだけです:
 
 このテンプレートでできるのは、あくまで **会社の「土台」** です。
 
-そのまま出てくる成果物は、正直まだ「AIっぽさ」が残ります。実戦で使えるレベルにするには、この土台の上に **指示書の磨き込み・ルール・記憶（フィードバックの蓄積）** を足していく必要があります。
+そのまま出てくる成果物は、正直まだ「AIっぽさ」が残ります。実戦で使えるレベルにするには、この土台の上に **3つのフォルダの厚み** —— スキル（指示書の磨き込み）・ナレッジ（自分の会社のルール・フィードバックの蓄積）・アウトプット（合格した正解例）—— を足していく必要があります。各社員の `knowledge/feedback.md` に経営者の直しを1行ずつ足していくのが、その第一歩です。
 
 その磨き方は、YouTubeで実際の経営の現場から発信していきます。
 
